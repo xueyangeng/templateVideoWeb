@@ -1,0 +1,11 @@
+.DS_Store
+package/
+.idea/
+_temp/
+*.zip
+build/static/css/*.map
+public/animate/
+build/static/js/*.map
+node_modules/
+npm-debug.log*
+stager/

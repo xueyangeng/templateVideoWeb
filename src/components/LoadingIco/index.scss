@@ -1,0 +1,94 @@
+$dotSize: 1em;
+$dotColor: #1890ff;
+$dotBgColor: $dotColor;
+$dotBeforeColor: $dotColor;
+$dotAfterColor: $dotColor;
+$dotSpacing: $dotSize + $dotSize / 2;
+
+@mixin dot($size: $dotSize, $bgColor: $dotBgColor, $color: $dotColor) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  background-color: $bgColor;
+  color: $color;
+}
+
+.loadingIco {
+  height: 1em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  &.small {
+    height: 0.5em;
+  }
+  &.middle {
+    height: 10px;
+  }
+
+  .loadingIco-inner {
+    position: relative;
+    @include dot;
+    animation: dotFlashing 1s infinite linear alternate;
+    animation-delay: 0.5s;
+
+    &::before,
+    &::after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: 0;
+    }
+    &::before {
+      left: -$dotSpacing;
+      @include dot($bgColor: $dotBeforeColor);
+      animation: dotFlashing 1s infinite alternate;
+      animation-delay: 0s;
+    }
+    &::after {
+      left: $dotSpacing;
+      @include dot($bgColor: $dotAfterColor);
+      animation: dotFlashing 1s infinite alternate;
+      animation-delay: 1s;
+    }
+    &.small {
+      @include dot(0.5em);
+    }
+    &.middle {
+      @include dot(10px);
+    }
+    &.small {
+      &::before,
+      &::after {
+        left: $dotSpacing / 2;
+        @include dot(0.5em, $bgColor: $dotBeforeColor);
+      }
+      &::before {
+        left: -$dotSpacing / 2;
+      }
+    }
+    &.middle {
+      &::before,
+      &::after {
+        left: $dotSpacing / 1.4;
+        @include dot(10px, $bgColor: $dotBeforeColor);
+      }
+      &::before {
+        left: -$dotSpacing / 1.4;
+      }
+    }
+  }
+}
+
+@keyframes dotFlashing {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+
+  100% {
+    opacity: 0.2;
+  }
+}

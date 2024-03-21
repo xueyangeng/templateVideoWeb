@@ -1,0 +1,28 @@
+/******style******************/
+$black-style: #292728 !default;
+
+$icoColor: transparent !default; //主色调
+$style: #1890ff !default; // 主色调
+$hoverStyle: #1a73e8 !default; // 移入颜色
+$thirdColor: #e8e9ff !default;
+$fontStyle: #000; // 字体颜色
+
+//明黄色（团队编辑切换
+$sub-color-yellow: #ffd100;
+//文件夹颜色
+$file-color: #ffd100;
+
+//tip color
+$tip-color-1: #ff0000;
+$tip-color-2: #ffc03b;
+$tip-color-3: #3dadff;
+$tip-color-4: #ab9bff;
+
+$sliderBg: #bdbdbd !default; //滑条背景色
+$sliderCtrl: #bfbfbf !default; //滑条控制点颜色
+$loadingStyle: $icoColor !default;
+$borderStyle: #f28100;
+
+@import "./antd.scss";
+@import "./iconfont/iconfont.css";
+@import "./main.scss";

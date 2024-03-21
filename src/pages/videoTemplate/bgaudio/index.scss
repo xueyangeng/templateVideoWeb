@@ -1,0 +1,185 @@
+.audiobox{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  .noData{
+      display: flex;
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      line-height: 20px;
+      position: absolute;
+      img{
+          margin-bottom: 10px;
+      }
+      button{
+        margin-top: 18px;
+      }
+  }
+  .whitbottom{
+    border-color: #fff;
+    font-size: 12px;
+    transition: all 0.3s ;
+    &:hover{
+        background-color: rgba(24,144,255,1);
+        border-color: rgba(24,144,255,1) !important;
+        span{
+            color: #fff;
+        }
+    }
+  }
+  .ant-spin-nested-loading, .ant-spin-container{
+    width: 100%;
+    height: 100%;
+  }
+  .box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .audiohead{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 16px;
+      font-weight: 400;
+      flex-shrink: 0;
+      margin-bottom: 17px;
+    }
+    .audiolist{
+      height: 100%;
+      overflow-y: auto;
+      position: relative;
+      // .InfiniteScroll{
+      //   min-height: 100%;
+      // }
+      .list{
+        .demo-loading-container {
+          position: absolute;
+          bottom: 40px;
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+  }
+  .setvisible{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 100%;
+    z-index: 1;
+    background: #F0F3F7;
+    border-right: 1px solid #d8dfe9;
+    padding: 0 20px;
+    .action{
+      display: flex;
+      justify-content: space-between;
+      padding: 18px 0;
+      .back{
+        font-size: 14px;
+        line-height: 20px;
+        color: #161616;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        svg{
+          width: 18px;
+          height: 18px;
+        }
+      }
+      button{
+        height: 30px;
+        width: 104px;
+        display: flex;
+        justify-content: center;
+      }
+    }
+    .settitle{
+      font-size: 14px;
+      color: #414346;
+      line-height: 20px;
+      margin-bottom: 10px;
+      margin-top: 20px;
+    }
+    .location{
+      display: flex;
+      justify-content: space-between;
+      .timer{
+        border: 1px solid rgba(56,102,169,.2);
+        border-radius: 4px;
+        width: 197px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .ant-picker{
+          .ant-picker-input{
+            input{
+              text-align: center;
+            }
+          }
+        }
+      }
+      .switch{
+        display: flex;
+        align-items: center;
+        button{
+          margin-left: 8px;
+        }
+      }
+    }
+    .slideritem{
+      display: flex;
+      align-items: center;
+      svg{
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+      }
+      .ant-slider{
+        width: 100%;
+        margin: 0 10px;
+        .ant-slider-rail{
+          background-color: rgba(216,223,233,1);
+        }
+        .ant-slider-handle{
+          border-color: #d8dfe9;
+        }
+        .ant-slider-track{
+          background-color: rgba(24,144,255,1);
+        }
+        .ant-slider-step{
+          height: 3px;
+        }
+      }
+      .slidernum{
+        flex-shrink: 0;
+        border: 1px solid rgba(56,102,169,.2);
+        border-radius: 4px;
+        font-size: 14px;
+        line-height: 17px;
+        width: 33px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span{
+          transform: scaleX(.8);
+        }
+      }
+    }
+  }
+
+}
+.musictime{
+  .ant-picker-ranges{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

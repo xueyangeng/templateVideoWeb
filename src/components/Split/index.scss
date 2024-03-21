@@ -1,0 +1,212 @@
+.split {
+  height: 150px;
+  background: #ffffff;
+  padding: 8px 16px;
+  margin-top: 16px;
+  box-sizing: border-box;
+  .common-wrapper {
+    position: relative;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    .scale-pointer-box {
+      top: 0;
+      left: 16px;
+      z-index: 10;
+      position: absolute;
+      /deep/.el-slider__runway {
+        margin: 0;
+        height: 32px;
+        background: none;
+        .el-slider__bar {
+          height: 100%;
+          background: none;
+        }
+        .el-slider__button-wrapper {
+          top: 0;
+          width: 15px;
+          height: 100%;
+          cursor: pointer;
+          &:before {
+            content: "";
+            width: 13px;
+            height: 16px;
+            position: absolute;
+            top: 16px;
+            left: 0;
+            border-radius: 0 0 10px 10px;
+            background: #ffbe00;
+          }
+          &:after {
+            content: "";
+            width: 1px;
+            height: 53px;
+            position: absolute;
+            top: 16px;
+            left: 6px;
+            z-index: 10;
+            background: #ffbe00;
+          }
+          .el-slider__button {
+            display: none;
+          }
+        }
+      }
+    }
+    .scale-box-wrapper {
+      height: 32px;
+      display: flex;
+      border-bottom: 1px solid #ebebeb;
+      margin-left: 15px;
+      overflow: hidden;
+      .item-wrapper {
+        .span {
+          font-size: 12px;
+        }
+        .item-box-wrapper {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 10px;
+          i {
+            width: 0;
+            height: 5px;
+            border-left: 1px solid rgba(0, 0, 0, 0.1);
+            &:first-child {
+              border-left: 1px solid rgba(0, 0, 0, 0.65);
+            }
+            &:last-child {
+              border-left: none;
+            }
+          }
+        }
+      }
+    }
+    &::-webkit-scrollbar-track {
+      background: #e4e7ed;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #a6a6a6;
+    }
+  }
+  .preinstall {
+    height: 24px;
+    box-sizing: border-box;
+    display: flex;
+    font-size: 12px;
+    align-items: center;
+    margin-top: 16px;
+    .r {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+      .der {
+        width: 72px;
+        margin: 0 4px;
+        /deep/.el-slider__runway {
+          margin: 0;
+          height: 2px;
+        }
+        /deep/.el-slider__bar {
+          background: #999;
+          height: 2px;
+        }
+        /deep/.el-slider__button {
+          width: 2px;
+          height: 2px;
+          border: 2px solid #999;
+          vertical-align: 0;
+        }
+        /deep/.el-slider__button.dragging,
+        /deep/.el-slider__button.hover,
+        /deep/.el-slider__button:hover {
+          transform: scale(1.2);
+          border: 2px solid red;
+        }
+      }
+      /deep/.el-slider__button-wrapper {
+        width: 6px;
+        height: 6px;
+        top: -9px;
+      }
+    }
+    .el-button--default {
+      min-width: 44px;
+    }
+    .el-divider--vertical {
+      margin: 0 16px;
+      height: 16px;
+    }
+    .tip {
+      color: #303133;
+      &:hover {
+        color: red;
+        cursor: pointer;
+      }
+    }
+  }
+}
+.shortcut {
+  line-height: 32px;
+  color: yellow;
+  i {
+    float: right;
+    font-style: normal;
+    color: #000000;
+  }
+}
+.range-box {
+  margin: 8px 0;
+  background: #e4e7ed;
+}
+#range {
+  position: relative;
+  height: 30px;
+  margin-left: 15px;
+  padding-right: 15px;
+  background: #e4e7ed;
+}
+#meaBox {
+  overflow: hidden;
+  position: absolute;
+  height: 30px;
+  border: 2px solid #1890ff;
+  border-left: 0;
+  box-sizing: border-box;
+  border-right: 0;
+  cursor: pointer;
+  background: rgba(24, 144, 255, 0.3);
+  color: #ffffff;
+  text-align: center;
+  line-height: 26px;
+  font-size: 14px;
+  width: 100%;
+}
+.mea {
+  background: #1890ff;
+  position: absolute;
+  width: 15px;
+  height: 30px;
+}
+.mea:before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 5px;
+  width: 3px;
+  height: 16px;
+  border: 1px solid #fff;
+  border-top: 0;
+  border-bottom: 0;
+}
+#mea_l {
+  left: -15px;
+  cursor: ew-resize;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+#mea_r {
+  right: 0;
+  cursor: ew-resize;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}

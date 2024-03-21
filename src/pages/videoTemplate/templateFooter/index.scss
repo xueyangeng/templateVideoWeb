@@ -1,0 +1,36 @@
+.templateFooter-wrap {
+  display: flex;
+  .templateFooter-play {
+    margin-right: 34px;
+    width: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    > div {
+      width: 48px;
+      height: 48px;
+      opacity: 1;
+      background: #ffffff;
+      border: 1px solid #e7ecf0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      > span {
+        font-size: 16px;
+      }
+    }
+    > span {
+      margin-top: 18px;
+      font-size: 12px;
+      color: #52657e;
+    }
+  }
+  .templateFooter-list {
+    flex: 1;
+    display: flex;
+    overflow-y: auto;
+    padding-bottom: 10px;
+  }
+}

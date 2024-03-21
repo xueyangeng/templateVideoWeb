@@ -1,0 +1,29 @@
+.conciseModal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  > div {
+    padding: 10px 0;
+  }
+  .conciseModal-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 1);
+  }
+  .conciseModal-text {
+    font-size: 14px;
+    color: rgba(113, 113, 113, 1);
+  }
+  .conciseModal-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    > Button {
+      margin: 0 6px;
+      &.pithy {
+        border: none;
+        box-shadow: none;
+      }
+    }
+  }
+}

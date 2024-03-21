@@ -1,0 +1,195 @@
+.headend-config {
+  margin-top: 30px;
+  label {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #000000;
+    &::after {
+      display: inline-block;
+      margin-left: 4px;
+      color: #ff4d4f;
+      font-size: 14px;
+      font-family: SimSun, sans-serif;
+      line-height: 1;
+      content: "*";
+    }
+  }
+  .ant-input-affix-wrapper {
+    margin-top: 10px;
+    margin-bottom: 22px;
+  }
+  .headend-list {
+    display: grid;
+    grid-template-columns: 123px 123px 123px;
+    grid-column-gap: 4px;
+    .headend-item {
+      height: 118px;
+      background: #ffffff;
+      border-radius: 6px;
+      .headend-empty {
+        font-size: 12px;
+        color: #6d7278;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        > svg {
+          width: 24px;
+          height: 24px;
+          margin-bottom: 16px;
+          cursor: pointer;
+        }
+      }
+      .headend-image {
+        height: 82px;
+        > ul {
+          justify-content: space-between;
+          width: 100%;
+        }
+      }
+      .headend-handle {
+        text-align: center;
+        font-size: 12px;
+        color: #333333;
+        &:hover {
+          color: #1890ff;
+        }
+      }
+    }
+  }
+}
+.headendConfig-preview {
+  width: 380px;
+  height: 210px;
+  background: #333333;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  > img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .headendConfig-play {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: calc((100% - 40px) / 2);
+    left: calc((100% - 40px) / 2);
+    width: 40px;
+    height: 40px;
+    opacity: 0.7;
+    background: #000000;
+    border-radius: 50%;
+    cursor: pointer;
+    .ico {
+      font-size: 16px;
+      color: #f2f2f2;
+    }
+  }
+  &.empty {
+    background: #e2e7ef;
+    font-size: 12px;
+    color: #6d7278;
+    display: flex;
+    flex-direction: column;
+    .headendConfig-play {
+      margin-bottom: 20px;
+      position: initial;
+      width: 50px;
+      height: 43px;
+      background: #ffffff;
+      border-radius: 0;
+    }
+  }
+}
+.headendConfig-position {
+  width: 516px;
+  height: 288px;
+  background-color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  .headendConfig-background {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .headendConfig-watermark {
+    position: absolute;
+    width: calc(378 / 1920 * 100%);
+    height: calc(168 / 1080 * 100%);
+    display: flex;
+    > img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+    &.left_top {
+      justify-content: flex-start;
+      align-items: flex-start;
+      left: calc(64 / 1920 * 100%);
+      top: calc(64 / 1080 * 100%);
+    }
+    &.right_top {
+      justify-content: flex-end;
+      align-items: flex-start;
+      right: calc(64 / 1920 * 100%);
+      top: calc(64 / 1080 * 100%);
+    }
+    &.left_bottom {
+      justify-content: flex-start;
+      align-items: flex-end;
+      left: calc(64 / 1920 * 100%);
+      bottom: calc(64 / 1080 * 100%);
+    }
+    &.right_bottom {
+      justify-content: flex-end;
+      align-items: flex-end;
+      right: calc(64 / 1920 * 100%);
+      bottom: calc(64 / 1080 * 100%);
+    }
+  }
+}
+.headendConfig-positionHandle {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: 14px;
+  > div {
+    display: grid;
+    grid-template-columns: 30px 30px;
+    grid-template-rows: 30px 30px;
+    grid-column-gap: 4px;
+    grid-row-gap: 4px;
+    > Button {
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+.ant-popover-content {
+  border-radius: 6px;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+.headendVolume-wrap {
+  width: 123px;
+  height: 76px;
+  padding: 12px;
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.05);
+  .ant-slider-track {
+    background-color: #1890ff;
+  }
+  .ant-slider-handle {
+    border-color: #1890ff;
+  }
+}

@@ -1,0 +1,440 @@
+.music{
+  background: #fff;
+  padding: 15px;
+  margin-bottom: 5px;
+  display: flex;
+  border-radius: 4px;
+  user-select: none;
+  flex-shrink: 0;
+  position: relative;
+  transition: padding 0.2s ;
+  .musicplay {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    .line {
+      position: absolute;
+      width: 2px;
+      transition: .5s;
+      animation: equalize 4s 0s infinite;
+      animation-timing-function: linear;
+      bottom: 0;
+    }
+    .line1 {
+      left: 0px;
+      animation-delay: -1.9s;
+      background-color: #fff;
+    }
+  
+    .line2 {
+      left: 4px;
+      animation-delay: -2.9s;
+      background-color: #fff;
+    }
+  
+    .line3 {
+      left: 8px;
+      animation-delay: -3.9s;
+      background-color: #fff;
+    }
+  
+    .line4 {
+      left: 12px;
+      animation-delay: -4.9s;
+      background-color: #fff;
+    }
+  }
+  &:hover{
+    padding-bottom: 55px;
+    .musicthumb{
+      background: conic-gradient(from 90deg at 50% 50%, #003456 -28.72deg, #07618A 39.51deg, #0E436B 94.18deg, #056691 215.54deg, #003456 331.28deg, #07618A 399.51deg);
+      position: relative;
+    }
+    .stop{
+      .playbutton{
+        display: flex;
+        .runplay{
+          display: block;
+        }
+      }
+    }
+    .running {
+      .playbutton{
+        .runpause{
+          display: block;
+        }
+        .musicplay{
+          display: none;
+        }
+      }
+    }
+    .cardaction{
+      display: flex;
+      button{
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+  .musicthumb{
+    width: 65px;
+    height: 65px;
+    opacity: 1;
+    background: conic-gradient(from 109.09deg at 50% 50%, #FFFFFF -1.85deg, #C7D6E9 36.77deg, #EDF1F7 112.15deg, #EBF0F7 171.93deg, #D2DEED 214.39deg, #F1F3F5 338.62deg, #FFFFFF 358.15deg, #C7D6E9 396.77deg);
+    border: 2px solid #edf1f6;
+    border-radius: 50%;
+    margin-right: 15px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    img{
+      width: 39px;
+      height: 39px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid rgba(255,255,255,0.24);
+    }
+    .playbutton{
+      position: absolute;
+      border-radius: 50%;
+      content: "";
+      width: 39px;
+      height: 39px;
+      background: linear-gradient(314.06deg, #0067FF 4.48%, #00EBFF 94.21%);
+      opacity: 0.9;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+      .runplay,.runpause{
+        width: 22px;
+        height: 22px;
+        display: none;
+        svg{
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .musicplay {
+        display: none;
+      }
+    }
+    .playceng{
+      background: none;
+      z-index: 2;
+    }
+  }
+  .running{
+    .playbutton{
+      display: flex;
+      .musicplay{
+        display: block;
+      }
+    }
+  }
+  .pause{
+    .playbutton{
+      display: flex;
+      .runplay{
+        display: block;
+      }
+    }
+  }
+  .musicinfo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    .title{
+      font-size: 16px;
+      line-height: 22px;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      overflow: hidden;
+      margin-bottom: 12px;
+      position: relative;
+      padding-right: 20px;
+      .select{
+        position: absolute;
+        right: 0;
+        top: 3px;
+        svg{
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+    .timer{
+      font-size: 12px;
+      line-height: 17px;
+      justify-content: space-between;
+      display: flex;
+      color: rgba(109,114,120,1);
+      .timing{
+        width: 40px;
+        flex-shrink: 0;
+      }
+      .timeline{
+        position: relative;
+        width: 100%;
+        .playtime{
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          left: 0;
+          top: 0;
+          z-index: 1;
+        }
+        img{
+          width: 100%;
+        }
+      }
+      .totaltime{
+        width: 40px;
+        flex-shrink: 0;
+        text-align: right;
+      }
+    }
+    .setinfo{
+      display: none;
+    }
+  }
+  .cardaction{
+    position: absolute;
+    width: 100%;
+    bottom: 15px;
+    left: 0;
+    padding: 0 15px;
+    justify-content: space-between;
+    display: flex;
+    button{
+      height: 30px;
+      padding: 4px 6px;
+      font-size: 12px;
+      opacity: 0;
+      visibility: hidden;
+      transition-delay: 1s;
+      transition-property: opacity;
+      transition-duration:.2s;
+      transition-timing-function: ease-in;
+      transition-delay:.05s;
+      &:hover{
+        .iconfont{
+          color: #1a73e8;
+        }
+      }
+    }
+    .cardtoolright{
+      display: flex;
+      button{
+        width: 60px;
+        margin-left: 10px;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
+.setitem{
+  height: 137px;
+  background-image: url(../../../../assets/images/item.png);
+  background-size: 100% auto;
+  padding: 20px 15px 15px 20px;
+  margin-bottom: 0;
+  &:hover{
+    padding-bottom: 15px;
+    .musicthumb{
+      .playbutton{
+        display: flex;
+      }
+    }
+    .cardaction{
+      display: none;
+    }
+  }
+  .musicthumb{
+    width: 80px;
+    height: 80px;
+    border: 0;
+    margin-right: 20px;
+    background: conic-gradient(from 90deg at 50% 50%, #003456 -28.72deg, #07618A 39.51deg, #0E436B 94.18deg, #056691 215.54deg, #003456 331.28deg, #07618A 399.51deg);
+    img{
+      width: 49px;
+      height: 49px;
+    }
+    .playbutton{
+      width: 49px;
+      height: 49px;
+      display: none;
+      .runplay,.runpause{
+        width: 26px;
+        height: 26px;
+        margin-left: 2px;
+      }
+    }
+  }
+  .musicinfo{
+    justify-content: start;
+    .title{
+      font-size: 16px;
+      color: #fff;
+      margin: 10px 0 15px 0;
+      padding-right: 30px;
+      .musicplay{
+        position: absolute;
+        right: 12px;
+        top: 2px;
+        display: none;
+      }
+    }
+    .timer{
+      .timeline{
+        margin-right: 8px;
+      }
+      .timing{
+        display: none;
+      }
+      .totaltime{
+        display: none;
+      }
+    }
+    .setinfo{
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      align-items: center;
+      .settime{
+        display: flex;
+        font-size: 12px;
+        color: #fff;
+        .timing{
+          margin-right: 3px;
+        }
+        .totaltime{
+          margin-left: 3px;
+        }
+      }
+      button{
+        height: 26px;
+        width: 84px;
+        display: flex;
+        justify-content: center;
+        border-color: #fff;
+      }
+    }
+  }
+  .running{
+    img{
+      animation: musicTransform 18s linear infinite;
+    }
+    .title{
+      .musicplay{
+        display: block;
+      }
+    }
+  }
+  .cardaction{
+    display: none;
+  }
+}
+@keyframes equalize {
+  0% {
+    height: 4px;
+  }
+  4% {
+    height: 16px;
+  }
+  8% {
+    height: 12px;
+  }
+  12% {
+    height: 8px;
+  }
+  16% {
+    height: 4px;
+  }
+  20% {
+    height: 8px;
+  }
+  24% {
+    height: 12px;
+  }
+  28% {
+    height: 10px;
+  }
+  32% {
+    height: 12px;
+  }
+  36% {
+    height: 4px;
+  }
+  40% {
+    height: 4px;
+  }
+  44% {
+    height: 12px;
+  }
+  48% {
+    height: 4px;
+  }
+  52% {
+    height: 8px;
+  }
+  56% {
+    height: 10px;
+  }
+  60% {
+    height: 8px;
+  }
+  64% {
+    height: 4px;
+  }
+  68% {
+    height: 8px;
+  }
+  72% {
+    height: 4px;
+  }
+  76% {
+    height: 4px;
+  }
+  80% {
+    height: 4px;
+  }
+  84% {
+    height: 20px;
+  }
+  88% {
+    height: 4px;
+  }
+  92% {
+    height: 4px;
+  }
+  96% {
+    height: 4px;
+  }
+  100% {
+    height: 4px;
+  }
+}
+@keyframes musicTransform {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

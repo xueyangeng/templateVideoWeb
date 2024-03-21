@@ -1,0 +1,183 @@
+.thumb{
+    width: 100%;
+    background: rgba(250,250,250,1);
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    user-select: none;
+    .checkbox{
+        position: absolute;
+        display: none;
+        // width: 14px;
+        // height: 14px;
+        // background: #fff;
+        // border: 1px solid rgba(214,214,214,1);
+        // border-radius: 2px;
+        left: 8px;
+        top: 8px;
+        z-index: 1;
+        cursor: pointer;
+        svg{
+            width: 16px;
+            height: 16px;
+        }
+        .checksvg{
+            display: none;
+        }
+    }
+    .ischeck{
+        display: block;
+        // background: rgba(24,144,255,1);
+        // border-color: rgba(24,144,255,1);
+        svg{
+            display: none;
+        }
+        .checksvg{
+            display: block;
+        }
+    }
+    .imgbox{
+        width: 100%;
+        height: 84px;
+        position: relative;
+        cursor: pointer;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: rgba(51,51,51,1);
+        }
+        .nobg{
+            background: none;
+        }
+        .duration{
+            position: absolute;
+            border-radius: 2px;
+            background: rgba(51,51,51,.5);
+            right: 6px;
+            bottom: 4px;
+            color: #fff;
+            font-size: 12px;
+            line-height: 1;
+            padding: 4px;
+        }
+        .play{
+            display: flex;
+            background: rgba(51,51,51,.67);
+            width: 33px;
+            height: 33px;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform:translate(-50%, -50%);
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            opacity: 0;
+            svg{
+                color: #fff;
+                width: 16px;
+                height: 16px;
+            }
+        }
+        .progressbox{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(6, 6, 6, .5);
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            line-height: 20px;
+            color: #fff;
+            .progress{
+                position: absolute;
+                width: 100%;
+                height: 4px;
+                bottom: 0;
+                left: 0;
+                background: #d6d6d6;
+                .progressinlin{
+                    height: 100%;
+                    background: rgba(24,144,255,1);
+                    position: absolute;
+                    left: 0;
+                }
+            }
+        }
+        .uperror{
+            background: rgba(6, 6, 6, .7);
+            flex-direction: column;
+            .onRetry{
+                color: rgba(24,144,255,1);
+                margin-top: 2px;
+                cursor: pointer;
+            }
+        }
+    }
+    h1{
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
+        font-size: 12px;
+        line-height: 17px;
+        font-weight: 400;
+        margin: 4px 0 ;
+        padding: 0 6px;
+    }
+    .time{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 6px;
+        color: rgba(189,189,189,1);
+        font-size: 12px;
+        line-height: 17px;
+        padding-bottom: 4px;
+        .iconsvg{
+            width: 16px;
+            height: 16px;
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            background-image: url(../../../../assets/images/icon.svg);
+            background-position: 0 -176px;
+        }
+        .img {
+            background-position: 0px -32px;
+        }
+        .video {
+            background-position: 0px -48px;
+        }
+        .audio {
+            background-position: 0px -64px;
+        }    
+    }
+    &:hover{
+        .play{
+            opacity: 1;
+        }
+        .checkbox{
+            display: block;
+        }
+    }
+}
+.isprogress{
+    &:hover{
+        .play{
+            opacity: 0;
+        }
+        .checkbox{
+            display: none;
+        }
+    }
+}
+.checkthumb{
+    // outline: rgba(24,144,255,1) solid 1px;;
+    box-shadow: 0 0 2px #0b1ad6;
+    background: rgba(240,243,247,1);
+}

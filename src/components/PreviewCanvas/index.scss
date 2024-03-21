@@ -1,0 +1,68 @@
+.previewCanvas-main {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  .previewCanvas-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 26px;
+    font-size: 16px;
+    color: #f0f3f7;
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    opacity: 0.5;
+    background: linear-gradient(180deg, #000000, rgba(0, 0, 0, 0) 100%);
+    .ico {
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+  > canvas {
+    width: 100%;
+    height: 100%;
+    background-color: #333333;
+  }
+  .slider-wrap {
+    width: 100%;
+    padding: 26px;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    // opacity: 0.5;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0), #000000 100%);
+    .ico {
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .ant-slider {
+      flex: 1;
+      margin: 0 16px;
+      .ant-slider-track {
+        background: #1890ff;
+      }
+      .ant-slider-handle {
+        border: 4px solid #1890ff;
+      }
+    }
+    > span {
+      font-size: 14px;
+      color: #ffffff;
+    }
+    .previewCanvas-buttons {
+      display: flex;
+      > button {
+        margin-left: 20px;
+      }
+    }
+  }
+}
+.previewCanvas-palyer {
+  visibility: hidden;
+}

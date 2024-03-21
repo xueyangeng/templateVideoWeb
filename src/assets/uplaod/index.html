@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <input type="file" id="file" multiple />
+    <script>
+      var SOURCE_TYPE = {
+        img: 1,
+        video: 2,
+        audio: 5,
+        xls: 6,
+        doc: 6,
+        ppt: 6,
+        pdf: 6,
+        txt: 6,
+        file: 8,
+      };
+      var FILE_TYPE = {
+        video: [
+          ".3gp",
+          ".avi",
+          ".mp4",
+          ".wmv",
+          ".mkv",
+          ".mov",
+          ".flv",
+          ".asf",
+          ".f4v",
+          ".mpeg",
+          ".mpg",
+          ".ts",
+          ".mts",
+          ".wmv",
+          ".rm",
+          ".rmvb",
+          ".webm",
+          ".m4v",
+        ],
+        img: [
+          ".jpg",
+          ".jpeg",
+          ".png",
+          ".gif",
+          ".heic",
+          ".eps",
+          ".bmp",
+          ".raw",
+          ".tif",
+          ".dng",
+          ".cr3",
+          ".nef",
+          ".cr2",
+          ".crw",
+        ],
+        audio: [".mp3", ".wma", ".wav", ".m4a"],
+        xls: [".xls", ".xlsx"],
+        doc: [".doc", ".docx"],
+        ppt: [".ppt", ".pptx"],
+        zip: [".zip", ".rar"],
+        txt: [".txt"],
+        pdf: [".pdf"],
+        apk: [".apk"],
+      };
+      var getFileType = (ext) => {
+        let typeStr = "file";
+        Object.keys(FILE_TYPE).forEach((key) => {
+          if (FILE_TYPE[key].includes(ext.toLowerCase())) {
+            typeStr = key;
+          }
+        });
+        return typeStr;
+      };
+      var getCookie = function (name) {
+        var reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+        var arr = document.cookie.match(reg);
+        return arr ? unescape(arr[2]) : null;
+      };
+      var queryString = function (name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+          return unescape(r[2]);
+        }
+        return null;
+      };
+      var fixedNum = function (num) {
+        return num % 1 == 0 ? num : num.toFixed(2);
+      };
+      var getFileSize = function (size) {
+        let str = "";
+        if (size < 1048576) {
+          str = fixedNum(size / 1024) + "KB";
+        } else if (size >= 1048576 && size < 1073741824) {
+          str = fixedNum(size / (1024 * 1024)) + "MB";
+        } else if (size >= 1073741824) {
+          str = fixedNum(size / (1024 * 1024 * 1024)) + "GB";
+        }
+        return str;
+      };
+      if (queryString("multiple") == "false") {
+        document.getElementById("file").removeAttribute("multiple");
+      }
+      if (queryString("accept")) {
+        document
+          .getElementById("file")
+          .setAttribute("accept", queryString("accept"));
+      } else if (queryString("fileType")) {
+        var acceptStr = [];
+        var acceptArr = queryString("fileType").split(",");
+        acceptArr.forEach((item) => {
+          acceptStr = acceptStr.concat(FILE_TYPE[item]);
+        });
+        acceptStr = acceptStr.join(",");
+        document.getElementById("file").setAttribute("accept", acceptStr);
+      }
+      var cdn = "";
+      var hostname = window.location.hostname;
+      var env = hostname.match("-test|-dev");
+      if (hostname != "localhost") {
+        if (env) {
+          cdn = "/upload/";
+        } else if (hostname.indexOf("ai.") > -1) {
+          cdn = "https://aicdn.pdnews.cn/upload/";
+        } else {
+          cdn = "https://aibraincdn.pdnews.cn/upload/";
+        }
+        document.domain = "pdnews.cn";
+      }
+      var jqOK = false;
+      var upOK = false;
+      var jq = document.createElement("script");
+      jq.src = cdn + "jquery.min.js";
+      document.head.appendChild(jq);
+      jq.onload = function () {
+        jqOK = true;
+        if (upOK) {
+          var index = document.createElement("script");
+          index.src = cdn + "index.js";
+          document.head.appendChild(index);
+        }
+      };
+      var spark = document.createElement("script");
+      spark.src = cdn + "spark-md5.min.js";
+      document.head.appendChild(spark);
+
+      var up = document.createElement("script");
+      up.src = cdn + "uploader.min.js";
+      document.head.appendChild(up);
+      up.onload = function () {
+        upOK = true;
+        if (jqOK) {
+          var index = document.createElement("script");
+          index.src = cdn + "index.js";
+          document.head.appendChild(index);
+        }
+      };
+    </script>
+  </body>
+</html>

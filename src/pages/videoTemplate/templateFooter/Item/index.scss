@@ -1,0 +1,106 @@
+.templateFooterList-item {
+  width: 156px;
+  height: 136px;
+  padding: 8px;
+  border-radius: 8px;
+  margin-right: 24px;
+  flex-shrink: 0;
+  &.selected {
+    background: #f0f3f7;
+  }
+  &:hover {
+    background: transparent;
+    .templateFooterList-img {
+      border: 1px solid #1890ff;
+    }
+  }
+
+  .templateFooterList-add {
+    width: 100%;
+    height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f3f7;
+    border-radius: 8px;
+    border: 1px solid #ffffff;
+    .ico {
+      font-size: 24px;
+    }
+  }
+  .templateFooterList-img {
+    width: 100%;
+    height: 88px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333;
+    border-radius: 6px;
+    overflow: hidden;
+    > img {
+      max-height: 100%;
+      max-width: 100%;
+    }
+    > span {
+      position: absolute;
+      z-index: 11;
+      left: 6px;
+      top: 6px;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      opacity: 0.4;
+      background: #000000;
+      color: #ffffff;
+      border-radius: 4px;
+    }
+    .templateFooterList-del {
+      right: 6px;
+      left: auto;
+      .ico {
+        color: #ffffff;
+      }
+    }
+  }
+  .templateFooterList-handle {
+    height: calc(100% - 88px);
+    padding-top: 8px;
+    font-size: 12px;
+    color: #52657e;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .templateFooterList-name {
+      display: inline-block;
+      width: 100px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    ul {
+      display: flex;
+      > li {
+        padding: 0 4px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        border-radius: 2px;
+        color: #6d7278;
+        cursor: pointer;
+        .ico {
+          margin-right: 4px;
+          color: #6d7278;
+        }
+        &:hover {
+          color: #000000;
+          background: #f0f3f7;
+          .ico {
+            color: #000000;
+          }
+        }
+      }
+    }
+  }
+}
